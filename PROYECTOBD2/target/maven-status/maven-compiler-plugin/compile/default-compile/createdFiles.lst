@@ -1,3 +1,10 @@
-Menu$1.class
-Menu.class
+interfaces\Menu.class
+interfaces\Menu$2.class
 com\mycompany\proyectobd2\PROYECTOBD2.class
+interfaces\ConsultasBD$1.class
+interfaces\PagoPlanillas$1.class
+interfaces\ConsultasBD.class
+interfaces\Menu$3.class
+interfaces\PagoPlanillas.class
+interfaces\Menu$1.class
+interfaces\Menu$4.class
