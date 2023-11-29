@@ -29,8 +29,6 @@ public class Menu extends javax.swing.JFrame {
 
         BackgroundPanel = new javax.swing.JPanel();
         MenuPrincipalLabel = new javax.swing.JLabel();
-        InsertarDatosButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         PagoPlanillasButton = new javax.swing.JButton();
         consultasBDButton = new javax.swing.JButton();
         tituloLabel = new javax.swing.JLabel();
@@ -43,20 +41,6 @@ public class Menu extends javax.swing.JFrame {
         MenuPrincipalLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 3, 14)); // NOI18N
         MenuPrincipalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MenuPrincipalLabel.setText("Menú Principal");
-
-        InsertarDatosButton.setText("InsertarDatos");
-        InsertarDatosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsertarDatosButtonActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         PagoPlanillasButton.setText("PagoPlanillas");
         PagoPlanillasButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,15 +65,13 @@ public class Menu extends javax.swing.JFrame {
         BackgroundPanelLayout.setHorizontalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addGap(217, 217, 217)
+                .addGap(180, 180, 180)
                 .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tituloLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(InsertarDatosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(consultasBDButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MenuPrincipalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         BackgroundPanelLayout.setVerticalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,15 +79,11 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(tituloLabel)
                 .addGap(18, 18, 18)
                 .addComponent(MenuPrincipalLabel)
-                .addGap(19, 19, 19)
-                .addComponent(InsertarDatosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(consultasBDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addGap(28, 28, 28)
+                .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(consultasBDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,20 +100,12 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void consultasBDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultasBDButtonActionPerformed
         // TODO add your handling code here:
         ConsultasBD consultasBD = new ConsultasBD();
         consultasBD.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_consultasBDButtonActionPerformed
-
-    private void InsertarDatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarDatosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InsertarDatosButtonActionPerformed
 
     private void PagoPlanillasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagoPlanillasButtonActionPerformed
         // TODO add your handling code here:
@@ -181,11 +151,9 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPanel;
-    private javax.swing.JButton InsertarDatosButton;
     private javax.swing.JLabel MenuPrincipalLabel;
     private javax.swing.JButton PagoPlanillasButton;
     private javax.swing.JButton consultasBDButton;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }

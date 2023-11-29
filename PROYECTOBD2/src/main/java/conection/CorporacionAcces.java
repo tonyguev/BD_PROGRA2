@@ -140,8 +140,12 @@ public class CorporacionAcces {
         return str;
     }
     
-    public static String getAguinaldoEmpleado (Integer idEmpleado, String planta){
-        String str = "";
+    public static List<String> getAguinaldoEmpleado (Integer idEmpleado, String planta){
+        List<String> str = new ArrayList<>();
+        String Nombre = "";
+        String Apellidos = "";
+        String Planta = "";
+        Float Aguinaldo = 0f;
         try{
             Connection connection = SQLDataBaseConnection.getConnection();
              
@@ -153,11 +157,14 @@ public class CorporacionAcces {
             
             ResultSet resultSet = statement.executeQuery(); //un result set es una tabla
             
-            while(resultSet.next()){
-                  str += resultSet.getString(1) + "\t" +
-                         resultSet.getString(2) + "\t" +
-                         resultSet.getString(3) + "\t" +
-                         resultSet.getFloat(4) + "\t" + "\n";
+            if (resultSet.next()){
+                    Nombre = resultSet.getString("Nombre");
+                    Apellidos = resultSet.getString("Apellidos");
+                    Planta = resultSet.getString("Planta");
+                    Aguinaldo = resultSet.getFloat("Aguinaldo");
+
+                    String datosEmpleados = Nombre + " " + Apellidos + " " + Planta + " " + Aguinaldo.toString();
+                    str.add(datosEmpleados);
               }
             
             connection.close();
@@ -196,6 +203,34 @@ public class CorporacionAcces {
         
         System.out.println(str);
         return str;
+    }
+    public static String getPlanillasPagas(String PlanillaE, String FechaE){
+        String Planilla = PlanillaE;
+        String Fecha = FechaE;
+        String resultado = "";
+        try{
+            Connection connection = SQLDataBaseConnection.getConnection();
+            String selectSQL = "EXEC PAGAR_PLANILLA ?,?";
+
+            PreparedStatement statement = connection.prepareStatement(selectSQL);
+
+            statement.setString(1, Planilla);
+            statement.setString(2, Fecha);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()){
+                resultado += resultSet.getString(1) + "\t" + resultSet.getString(2);
+            }
+
+            connection.close();
+
+        }catch (Exception exc){
+            exc.printStackTrace();
+        }
+        System.out.println(resultado);
+        return resultado.toString();
+
     }
     
 }

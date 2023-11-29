@@ -6,6 +6,9 @@ package interfaces;
 
 import conection.CorporacionAcces;
 
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
+
 /**
  *
  * @author antho
@@ -33,12 +36,12 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         EmpleadoAguinaldoTextField = new javax.swing.JTextField();
         CalcularAguinaldoButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        AreaTextoAguinaldo = new javax.swing.JTextArea();
         AplicarEnBDButton = new javax.swing.JButton();
         VolverButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         PlantaTextField = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,10 +61,6 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
             }
         });
 
-        AreaTextoAguinaldo.setColumns(20);
-        AreaTextoAguinaldo.setRows(5);
-        jScrollPane1.setViewportView(AreaTextoAguinaldo);
-
         AplicarEnBDButton.setText("Aplicar en BD");
         AplicarEnBDButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,38 +79,65 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
 
         PlantaTextField.setText("PlantaEmpleado");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Apellido", "Planta", "Aguinaldo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(CalcularAguinaldoEmpleadoLabel)
-                .addContainerGap(122, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CalcularAguinaldoButton))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(EmpleadoAguinaldoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(161, 161, 161)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PlantaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGap(15, 15, 15)
+                        .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(28, 28, 28))
+                        .addComponent(AplicarEnBDButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(EmpleadoAguinaldoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PlantaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)))
+                .addGap(0, 12, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AplicarEnBDButton)
-                    .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(CalcularAguinaldoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(193, 193, 193))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(CalcularAguinaldoEmpleadoLabel)
+                        .addGap(161, 161, 161))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,13 +154,13 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
                     .addComponent(PlantaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(CalcularAguinaldoButton)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AplicarEnBDButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(VolverButton)
-                .addGap(41, 41, 41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AplicarEnBDButton)
+                    .addComponent(VolverButton))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,8 +185,23 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
         Integer id = Integer.valueOf(idEmpleado);
         
         String planta = PlantaTextField.getText();
-        String aguinaldoStr = CorporacionAcces.getAguinaldoEmpleado(id, planta);
-        AreaTextoAguinaldo.setText(aguinaldoStr);
+        List<String> resultado = CorporacionAcces.getAguinaldoEmpleado(id, planta);
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        if (jTable1.getRowCount() == 0) {
+            model.addRow(new Object[]{null, null, null, null});
+        }
+
+        for (String str : resultado) {
+            String[] datos = str.split(" ");
+            String nombre = datos[0];
+            String apellido = datos[1];
+            String plantaEmpleado = datos[2];
+            String aguinaldo = datos[3];
+            model.addRow(new Object[]{nombre, apellido, plantaEmpleado, aguinaldo});
+        }
+
         AplicarEnBDButton.setEnabled(true);
         
     }//GEN-LAST:event_CalcularAguinaldoButtonActionPerformed
@@ -214,7 +255,6 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AplicarEnBDButton;
-    private javax.swing.JTextArea AreaTextoAguinaldo;
     private javax.swing.JButton CalcularAguinaldoButton;
     private javax.swing.JLabel CalcularAguinaldoEmpleadoLabel;
     private javax.swing.JTextField EmpleadoAguinaldoTextField;
@@ -223,6 +263,7 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@ package interfaces;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import conection.CorporacionAcces;
+
+import javax.swing.*;
+
 /**
  *
  * @author antho
@@ -37,8 +41,6 @@ public class PagoPlanillas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         FechaPlanillaTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,35 +82,6 @@ public class PagoPlanillas extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Respete el formato'YYYY-MM-DD'");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "IDEMPLEADO", "NOMBRE", "APELLIDO", "FECHAPAGO", "MontoPagadoBruto", "MontoPagadoNeto", "TipoPago"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,33 +90,32 @@ public class PagoPlanillas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
+                        .addComponent(ImprimirComprobanteButton)
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(PagarPlanillaButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                             .addComponent(PlantaPagarTextField))
-                        .addGap(150, 150, 150)
+                        .addGap(167, 167, 167)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                            .addComponent(FechaPlanillaTextField))
-                        .addGap(36, 36, 36))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ImprimirComprobanteButton)
-                        .addGap(98, 98, 98)
-                        .addComponent(PagarPlanillaButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(242, 242, 242))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(54, 54, 54))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel4)
+                                .addGap(0, 33, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(FechaPlanillaTextField))
+                                .addGap(19, 19, 19))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,14 +132,12 @@ public class PagoPlanillas extends javax.swing.JFrame {
                     .addComponent(FechaPlanillaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ImprimirComprobanteButton)
                     .addComponent(PagarPlanillaButton)
+                    .addComponent(ImprimirComprobanteButton)
                     .addComponent(VolverButton))
-                .addGap(12, 12, 12))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,9 +154,10 @@ public class PagoPlanillas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PagarPlanillaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarPlanillaButtonActionPerformed
+    private void ImprimirComprobanteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirComprobanteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PagarPlanillaButtonActionPerformed
+        
+    }//GEN-LAST:event_ImprimirComprobanteButtonActionPerformed
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
         // TODO add your handling code here:
@@ -195,9 +166,26 @@ public class PagoPlanillas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_VolverButtonActionPerformed
 
-    private void ImprimirComprobanteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirComprobanteButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImprimirComprobanteButtonActionPerformed
+    private void PagarPlanillaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarPlanillaButtonActionPerformed
+        String PlantaPagar = PlantaPagarTextField.getText();
+        String FechaPagar = FechaPlanillaTextField.getText();
+        String resultado = CorporacionAcces.getPlanillasPagas(PlantaPagar, FechaPagar);
+        String resultadoFinal = "";
+
+        if (resultado.equals("0\t0")){
+             resultadoFinal = "La planilla no existe";
+        }
+        else if (resultado.equals("1\t1")){
+           resultadoFinal = "La planilla ya se encuentra paga";
+        }
+        else{
+            resultadoFinal = "Se ha pagado la planilla: " + resultado;
+        }
+
+        System.out.println(resultadoFinal);
+        //Mostrar el resultado en una JOPtionPane
+        JOptionPane.showMessageDialog(null, resultadoFinal);
+    }//GEN-LAST:event_PagarPlanillaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,7 +233,5 @@ public class PagoPlanillas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
