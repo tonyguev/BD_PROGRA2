@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import conection.CorporacionAcces;
+
 /**
  *
  * @author antho
@@ -70,6 +72,11 @@ public class TotalSalarioYObligaciones extends javax.swing.JFrame {
         FormatoLabel.setText("Respete el formato 'YYYY-MM-DD'");
 
         ConsultarButton.setText("Consultar");
+        ConsultarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarButtonActionPerformed(evt);
+            }
+        });
 
         TotalTextArea.setColumns(20);
         TotalTextArea.setRows(5);
@@ -176,6 +183,17 @@ public class TotalSalarioYObligaciones extends javax.swing.JFrame {
         consultasBD.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverButtonActionPerformed
+
+    private void ConsultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarButtonActionPerformed
+        // TODO add your handling code here:
+        String fechaI = FechaInicioTextField.getText();
+        String fechaF = FechaFinalTextField.getText();
+        
+        String totalString = CorporacionAcces.getSalarioObligaciones(fechaI, fechaF);
+        TotalTextArea.setText(totalString);
+
+        
+    }//GEN-LAST:event_ConsultarButtonActionPerformed
 
     /**
      * @param args the command line arguments

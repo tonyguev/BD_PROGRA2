@@ -4,6 +4,10 @@
  */
 package interfaces;
 
+import conection.CorporacionAcces;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author antho
@@ -98,6 +102,11 @@ public class HistoricoEmpleado extends javax.swing.JFrame {
         jLabel3.setText("Ingrese la Planta a Consultar:");
 
         PlantaEmpleadoTextField.setText("PlantaDelEmpleado");
+        PlantaEmpleadoTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlantaEmpleadoTextFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,6 +176,37 @@ public class HistoricoEmpleado extends javax.swing.JFrame {
 
     private void ConsultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarButtonActionPerformed
         // TODO add your handling code here:
+        //Llama al procedimiento almacenado y muestra los resultados en la tabla
+        String Planta = PlantaEmpleadoTextField.getText();
+        Integer IDEmpleado = Integer.parseInt(EmpleadoConsultarTextField.getText());
+        
+        
+
+        CorporacionAcces corporacionAcces = new CorporacionAcces();
+        List<String> resultados = corporacionAcces.getHistorico(Planta, IDEmpleado);
+       
+       // Nombre = resultadoArray[1];
+        //Apellidos = resultadoArray[2];
+        //Fecha = resultadoArray[3];
+        //MontoPagadoBruto = Float.parseFloat(resultadoArray[4]);
+        //MontoPagadoNeto = Float.parseFloat(resultadoArray[5]);
+        
+        DefaultTableModel model = (DefaultTableModel) TablaResultadoHistorico.getModel();
+        model.setRowCount(0); // Limpiar la tabla antes de agregar nuevos resultados
+
+        
+        // Asegurarse de que haya al menos una fila en la tabla
+        if (TablaResultadoHistorico.getRowCount() == 0) {
+            model.addRow(new Object[]{null, null, null, null, null, null, null});
+        }
+        
+        for (String res: resultados){
+            String [] resultadoArray = res.split(" ");
+            
+            
+            model.addRow(new Object[]{Planta, IDEmpleado, resultadoArray[1], resultadoArray[2], resultadoArray[3], Float.parseFloat(resultadoArray[4]), Float.parseFloat(resultadoArray[5])});  
+        }
+        
     }//GEN-LAST:event_ConsultarButtonActionPerformed
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
@@ -175,6 +215,10 @@ public class HistoricoEmpleado extends javax.swing.JFrame {
         consultasBD.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverButtonActionPerformed
+
+    private void PlantaEmpleadoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlantaEmpleadoTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PlantaEmpleadoTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import conection.CorporacionAcces;
+
 /**
  *
  * @author antho
@@ -153,8 +155,13 @@ public class AguinaldoEmpleado extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Una vez que se calcula el aguinaldo, se debe de mostrar en el area de texto
         //y se debe de habilitar el boton de aplicar en BD
+        String idEmpleado = EmpleadoAguinaldoTextField.getText();
+        Integer id = Integer.valueOf(idEmpleado);
         
-
+        String planta = PlantaTextField.getText();
+        String aguinaldoStr = CorporacionAcces.getAguinaldoEmpleado(id, planta);
+        AreaTextoAguinaldo.setText(aguinaldoStr);
+        AplicarEnBDButton.setEnabled(true);
         
     }//GEN-LAST:event_CalcularAguinaldoButtonActionPerformed
 

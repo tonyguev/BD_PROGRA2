@@ -17,10 +17,10 @@ import java.sql.Statement;
  */
 public class SQLDataBaseConnection {
     private static final String connectionString =
-                "jdbc:sqlserver://DESKTOP-FLV5JB3:1433;"
-                + "database=LIBRERIA;"
-                + "user=sa;"
-                + "password=B1Admin;"
+                "jdbc:sqlserver://LAPTOG-AGG\\SQLEXPRESS:50413;"
+                + "database=CORPORACION;"
+                + "user=corporacion;"
+                + "password=corporacion;"
                 + "encrypt=false;"
                 + "trustServerCertificate=false;"
                 + "loginTimeout=30;";
@@ -33,7 +33,9 @@ public class SQLDataBaseConnection {
             Connection connection;
             connection = DriverManager.getConnection(connectionString);
             return connection;
-        } catch (SQLException ex) { }
+        } catch (SQLException ex) { 
+            ex.printStackTrace();
+        }
         return null;
     }
         

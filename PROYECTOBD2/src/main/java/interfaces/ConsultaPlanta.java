@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import conection.CorporacionAcces;
+
 /**
  *
  * @author antho
@@ -137,6 +139,9 @@ public class ConsultaPlanta extends javax.swing.JFrame {
 
     private void ConsultarPlantaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarPlantaButtonActionPerformed
         // TODO add your handling code here:
+        String datosPlanta = CorporacionAcces.getSalarioBrutoPlanta();
+        jTextArea1.setText(datosPlanta);
+
     }//GEN-LAST:event_ConsultarPlantaButtonActionPerformed
 
     private void OrdenarPlantaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarPlantaButtonActionPerformed

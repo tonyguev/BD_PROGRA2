@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import conection.CorporacionAcces;
+
 /**
  *
  * @author antho
@@ -133,9 +135,9 @@ public class TotalPagoSalarios extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechaInicioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,7 +167,13 @@ public class TotalPagoSalarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConsultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarButtonActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        String fechaI = FechaInicioTextField.getText();
+        String fechaF = FechaFinalTextField.getText();
+        
+        String montoPagadpStr = CorporacionAcces.getMontoPagado(fechaI, fechaF);
+        TextAreaSalarios.setText(montoPagadpStr);
+
     }//GEN-LAST:event_ConsultarButtonActionPerformed
 
     private void FechaInicioTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaInicioTextFieldActionPerformed
