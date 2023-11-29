@@ -10,6 +10,6 @@ package conection;
  */
 public class CorporacionAcces {
 
-    public static String 
+    /*public static String */
     
 }

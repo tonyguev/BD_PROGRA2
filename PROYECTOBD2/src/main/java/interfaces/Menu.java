@@ -33,12 +33,15 @@ public class Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         PagoPlanillasButton = new javax.swing.JButton();
         consultasBDButton = new javax.swing.JButton();
+        tituloLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BackgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         BackgroundPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        MenuPrincipalLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 3, 14)); // NOI18N
+        MenuPrincipalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MenuPrincipalLabel.setText("Menú Principal");
 
         InsertarDatosButton.setText("InsertarDatos");
@@ -64,33 +67,35 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        tituloLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        tituloLabel.setText("APLICACION CORPORACIÓN");
+        tituloLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
+
         javax.swing.GroupLayout BackgroundPanelLayout = new javax.swing.GroupLayout(BackgroundPanel);
         BackgroundPanel.setLayout(BackgroundPanelLayout);
         BackgroundPanelLayout.setHorizontalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(InsertarDatosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                            .addGap(239, 239, 239)
-                            .addComponent(MenuPrincipalLabel))
-                        .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                            .addGap(217, 217, 217)
-                            .addComponent(consultasBDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addGap(217, 217, 217)
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tituloLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InsertarDatosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(consultasBDButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MenuPrincipalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         BackgroundPanelLayout.setVerticalGroup(
             BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(tituloLabel)
+                .addGap(18, 18, 18)
                 .addComponent(MenuPrincipalLabel)
-                .addGap(47, 47, 47)
+                .addGap(19, 19, 19)
                 .addComponent(InsertarDatosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(PagoPlanillasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -167,5 +172,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton PagoPlanillasButton;
     private javax.swing.JButton consultasBDButton;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }
