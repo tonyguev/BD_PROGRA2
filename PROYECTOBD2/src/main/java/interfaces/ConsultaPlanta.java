@@ -149,6 +149,10 @@ public class ConsultaPlanta extends javax.swing.JFrame {
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
         // TODO add your handling code here:
+        ConsultasBD consultasBD = new ConsultasBD();
+        consultasBD.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_VolverButtonActionPerformed
 
     /**

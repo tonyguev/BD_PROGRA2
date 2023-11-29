@@ -32,8 +32,10 @@ public class ConsultasBD extends javax.swing.JFrame {
         AguinaldoDeUnEmpleadoButton = new javax.swing.JButton();
         MontoTotalPagadoSalariosButton = new javax.swing.JButton();
         TotalPagadoEnSalariosNyObligacionesButton = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ConsultasPlanta = new javax.swing.JButton();
         HistoricoEmpleadoButton = new javax.swing.JButton();
+        VolverButton = new javax.swing.JButton();
+        TopEmpleadosButtton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,46 +48,96 @@ public class ConsultasBD extends javax.swing.JFrame {
 
         AguinaldoDeUnEmpleadoButton.setText("Aguinaldo de Empleado");
         AguinaldoDeUnEmpleadoButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AguinaldoDeUnEmpleadoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AguinaldoDeUnEmpleadoButtonActionPerformed(evt);
+            }
+        });
 
         MontoTotalPagadoSalariosButton.setText("Monto Total Pagado por la empresa en Salarios");
+        MontoTotalPagadoSalariosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MontoTotalPagadoSalariosButtonActionPerformed(evt);
+            }
+        });
 
         TotalPagadoEnSalariosNyObligacionesButton.setText("Monto Total Pagado por la Empresa en Salarios Netos y Obligaciones");
+        TotalPagadoEnSalariosNyObligacionesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TotalPagadoEnSalariosNyObligacionesButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Consultas por Planta");
+        ConsultasPlanta.setText("Consultas por Planta");
+        ConsultasPlanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultasPlantaActionPerformed(evt);
+            }
+        });
 
         HistoricoEmpleadoButton.setText("Historico Empleado");
+        HistoricoEmpleadoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HistoricoEmpleadoButtonActionPerformed(evt);
+            }
+        });
+
+        VolverButton.setText("Volver");
+        VolverButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverButtonActionPerformed(evt);
+            }
+        });
+
+        TopEmpleadosButtton.setText("Lista 10 Empleados Mejor Pagados");
+        TopEmpleadosButtton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TopEmpleadosButttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(135, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(HistoricoEmpleadoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TotalPagadoEnSalariosNyObligacionesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MontoTotalPagadoSalariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AguinaldoDeUnEmpleadoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(104, 104, 104))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TopEmpleadosButtton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(HistoricoEmpleadoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultasPlanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TotalPagadoEnSalariosNyObligacionesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(MontoTotalPagadoSalariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(AguinaldoDeUnEmpleadoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(253, 253, 253))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(AguinaldoDeUnEmpleadoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AguinaldoDeUnEmpleadoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MontoTotalPagadoSalariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TotalPagadoEnSalariosNyObligacionesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(MontoTotalPagadoSalariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TopEmpleadosButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(TotalPagadoEnSalariosNyObligacionesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConsultasPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HistoricoEmpleadoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(HistoricoEmpleadoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addComponent(VolverButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,6 +153,48 @@ public class ConsultasBD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_VolverButtonActionPerformed
+
+    private void AguinaldoDeUnEmpleadoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AguinaldoDeUnEmpleadoButtonActionPerformed
+        AguinaldoEmpleado aguinaldoEmpleado = new AguinaldoEmpleado();
+        aguinaldoEmpleado.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_AguinaldoDeUnEmpleadoButtonActionPerformed
+
+    private void MontoTotalPagadoSalariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MontoTotalPagadoSalariosButtonActionPerformed
+        TotalPagoSalarios totalPagoSalarios = new TotalPagoSalarios();
+        totalPagoSalarios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_MontoTotalPagadoSalariosButtonActionPerformed
+
+    private void TotalPagadoEnSalariosNyObligacionesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPagadoEnSalariosNyObligacionesButtonActionPerformed
+        TotalSalarioYObligaciones totalSalarioYObligaciones = new TotalSalarioYObligaciones();
+        totalSalarioYObligaciones.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_TotalPagadoEnSalariosNyObligacionesButtonActionPerformed
+
+    private void ConsultasPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultasPlantaActionPerformed
+        ConsultaPlanta consultaPlanta = new ConsultaPlanta();
+        consultaPlanta.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ConsultasPlantaActionPerformed
+
+    private void HistoricoEmpleadoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoricoEmpleadoButtonActionPerformed
+        HistoricoEmpleado historicoEmpleado = new HistoricoEmpleado();
+        historicoEmpleado.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_HistoricoEmpleadoButtonActionPerformed
+
+    private void TopEmpleadosButttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TopEmpleadosButttonActionPerformed
+        TopEmpleados topEmpleados = new TopEmpleados();
+        topEmpleados.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_TopEmpleadosButttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,10 +233,12 @@ public class ConsultasBD extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AguinaldoDeUnEmpleadoButton;
+    private javax.swing.JButton ConsultasPlanta;
     private javax.swing.JButton HistoricoEmpleadoButton;
     private javax.swing.JButton MontoTotalPagadoSalariosButton;
+    private javax.swing.JButton TopEmpleadosButtton;
     private javax.swing.JButton TotalPagadoEnSalariosNyObligacionesButton;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton VolverButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

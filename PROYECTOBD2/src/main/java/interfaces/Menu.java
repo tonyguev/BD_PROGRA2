@@ -59,6 +59,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         PagoPlanillasButton.setText("PagoPlanillas");
+        PagoPlanillasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PagoPlanillasButtonActionPerformed(evt);
+            }
+        });
 
         consultasBDButton.setText("Consultas BD");
         consultasBDButton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,12 +128,21 @@ public class Menu extends javax.swing.JFrame {
 
     private void consultasBDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultasBDButtonActionPerformed
         // TODO add your handling code here:
-        
+        ConsultasBD consultasBD = new ConsultasBD();
+        consultasBD.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_consultasBDButtonActionPerformed
 
     private void InsertarDatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarDatosButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_InsertarDatosButtonActionPerformed
+
+    private void PagoPlanillasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagoPlanillasButtonActionPerformed
+        // TODO add your handling code here:
+        PagoPlanillas PagoPlanillas = new PagoPlanillas();
+        PagoPlanillas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PagoPlanillasButtonActionPerformed
 
     /**
      * @param args the command line arguments

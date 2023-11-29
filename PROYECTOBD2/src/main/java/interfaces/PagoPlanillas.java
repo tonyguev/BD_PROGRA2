@@ -190,6 +190,9 @@ public class PagoPlanillas extends javax.swing.JFrame {
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
         // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_VolverButtonActionPerformed
 
     private void ImprimirComprobanteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirComprobanteButtonActionPerformed

@@ -123,7 +123,7 @@ public class HistoricoEmpleado extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(358, 358, 358)
                         .addComponent(ConsultarButton)))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,6 +171,9 @@ public class HistoricoEmpleado extends javax.swing.JFrame {
 
     private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
         // TODO add your handling code here:
+        ConsultasBD consultasBD = new ConsultasBD();
+        consultasBD.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_VolverButtonActionPerformed
 
     /**

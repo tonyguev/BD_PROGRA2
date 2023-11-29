@@ -4,6 +4,8 @@
 
 package com.mycompany.proyectobd2;
 
+import interfaces.Menu;
+
 /**
  *
  * @author antho
@@ -11,6 +13,9 @@ package com.mycompany.proyectobd2;
 public class PROYECTOBD2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Menu menu = new Menu();
+        menu.setVisible(true);
+
+
     }
 }
